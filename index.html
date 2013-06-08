@@ -6,25 +6,103 @@
 	<meta charset="utf-8">
 	<link rel="stylesheet" href="css/jquery.mobile-1.2.0.min.css" />
 	<link rel="stylesheet" href="themes/theme-gray.css" />
+	<link rel="stylesheet" href="css/style.css" />
 	<script src="js/jquery-1.10.1.min.js"></script>
 	<script src="js/jquery.mobile-1.3.1.min.js"></script>
 	
-	<script src="js/news.js"></script>
+	<script src="js/v3.js"></script>
+	<script src="js/scripts.js"></script>
+	
 </head> 
 <body> 
 
+<!-- Start of Home -->
 <div data-role="page" id="home">
-
-
 	<div data-role="content">
-			<ul data-role="listview" id="ul-news">
+			<ul id="ul-icons">
+				<li>
+					<a href="#news_f_i" data-transition="slide">
+					<img src="images/classic.png" />
+					<h1>اخبار فوتبال داخلی</h1>
+					</a>
+				</li>
+				<li>
+					<a href="#news_f_e" data-transition="slide">
+					<img src="images/ball_trophy.png" />
+					<h1>اخبار فوتبال خارجی</h1>
+					</a>
+				</li>
+				<li>
+					<a href="#news_s" data-transition="slide">
+					<img src="images/sports.png" />
+					<h1>اخبار سایر رشته ها</h1>
+					</a>
+				</li>
 			</ul>
 	</div>
 
 	<div data-role="footer" data-position="fixed">
+		
 	</div>
 </div>
+<!-- End of Home -->
+<!-- Start of NEWS-football-inner -->
+<div data-role="page" id="news_f_i" class="newsDiv">
+	<div data-role="header">
+		<h1>اخبار فوتبال داخلی</h1>
+	</div>
+
+	<div data-role="content">
+		<ul data-role="listview" id="ul-news"></ul>
+	</div>
+	<div data-role="footer" data-position="fixed">
+		<a id="button_back" href="#" data-role="button" data-icon="arrow-l">بازگشت</a>
+	</div>
+</div>
+<!-- End of NEWS-football-inner -->
+<!-- Start of NEWS-football-ext -->
+<div data-role="page" id="news_f_e" class="newsDiv">
+	<div data-role="header">
+		<h1>اخبار فوتبال خارجی</h1>
+	</div>
+
+	<div data-role="content">
+		<ul data-role="listview" id="ul-news"></ul>
+	</div>
+	<div data-role="footer" data-position="fixed">
+		<a id="button_back" href="#" data-role="button" data-icon="arrow-l">بازگشت</a>
+	</div>
+</div>
+<!-- End of NEWS-football-ext -->
+<!-- Start of NEWS-football-ext -->
+<div data-role="page" id="news_s" class="newsDiv">
+	<div data-role="header">
+		<h1>اخبار ورزشی</h1>
+	</div>
+
+	<div data-role="content">
+		<ul data-role="listview" id="ul-news"></ul>
+	</div>
+	<div data-role="footer" data-position="fixed">
+		<a id="button_back" href="#" data-role="button" data-icon="arrow-l">بازگشت</a>
+	</div>
+</div>
+<!-- End of NEWS-football-ext -->
 
 
+
+<!-- Start of aNEWS-->
+<div data-role="page" id="anews">
+	<div data-role="header">
+		<h1 style="direction: rtl;"></h1>
+	</div>
+
+	<div data-role="content">
+	</div>
+	<div data-role="footer" data-position="fixed">
+		<a id="button_back" href="#" data-role="button" data-icon="arrow-l">بازگشت</a>
+	</div>
+</div>
+<!-- End of aNEWS -->
 </body>
 </html>
