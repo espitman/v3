@@ -13,7 +13,6 @@ $(document).on('pageinit', '#news_s', function() {
 }); 
 
 
-
 $(document).on('click', '#ul-news li a', function() {
 	$.mobile.showPageLoadingMsg();
 	showNews($(this));
@@ -22,5 +21,9 @@ $(document).on('click', '#ul-news li a', function() {
 $(document).on('click', '#button_back', function() {
 	parent.history.back();
     return false;
+}); 
+
+$(document).on('click', '.aLeague', function() {
+	showLeagueTable($(this));
 }); 
 
