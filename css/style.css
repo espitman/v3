@@ -4,6 +4,8 @@
 #ul-icons {
 	margin: 0;
 	padding: 0;
+	position: relative;
+	float: right;
 }
 #ul-icons li {
 	margin: 5px;
@@ -32,6 +34,10 @@
 	position: relative;
 	font-size: 11px;
 }
+#ul-news li:hover,#ul-news li:active {
+	background: red;
+}
+
 #anews {
 	font-family: Tahoma;
 }
@@ -75,7 +81,7 @@
 #league ul {
 	clear: both;
 	float: right;
-	width: 80%;
+	width: 100%;
 	margin: 5px 10%;
 	padding: 0;
 	line-height: 42px;
@@ -128,7 +134,7 @@
 }
 #league #anc-op {
 	display: none;
-	width: 80%;
+	width: 100%;
 	margin: 0 auto;
 	margin-bottom: 50px;
 }

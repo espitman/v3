@@ -1,3 +1,12 @@
+$(document).on('pageshow', '#home', function() {
+	iconsPos();
+}); 
+
+$(document).bind("orientationchange", function(e){
+	iconsPos(); 
+});	
+
+
 $(document).on('pageinit', '#news_f_i', function() {
 	var URL = "http://www.varzesh3.com/files/leftnewsFootInt.asp";
 	footballNewsList(URL,"news_f_i");
@@ -13,7 +22,8 @@ $(document).on('pageinit', '#news_s', function() {
 }); 
 
 
-$(document).on('click', '#ul-news li a', function() {
+$(document).on('click', '#ul-news li', function() {
+	$.mobile.loadingMessage = "please wait...";
 	$.mobile.showPageLoadingMsg();
 	showNews($(this));
 }); 
