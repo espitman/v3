@@ -24,7 +24,6 @@ $(document).on('click', '.lNews', function() {
 	} else if(a == "news_f_e") {
 		var URL = "http://www.varzesh3.com/files/leftnewsFootExt.asp";
 		footballNewsList(URL,"news_f_e");
-		
 	} else if(a == "news_s") {
 		sportNewsList();
 	}
