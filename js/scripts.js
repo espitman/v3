@@ -8,7 +8,6 @@ $(document).bind("orientationchange", function(e){
 
 
 $(document).on('click', '#ul-news li', function() {
-	$.mobile.showPageLoadingMsg();
 	showNews($(this));
 }); 
 

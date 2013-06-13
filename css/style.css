@@ -46,6 +46,11 @@
 	float: left;
 	margin-bottom: 10px;
 }
+#news_row h1 {
+	font-size: 18px !important;
+	margin-bottom: 10px !important;
+	font-weight: bold;
+}
 #anews #news_row #news_img {
 	float: left;
 	width: 35%;
@@ -58,12 +63,14 @@
 	float: right;
 	width: 65%;
 	text-align: justify;
+	font-size: 18px;
 }
-#anews #news_row #news_text {
+#anews #news_row #news_text,
+#anews #news_row #news_text *, 
+#anews #news_text * {
 	float: right;
 	text-align: justify;
-}
-#anews #news_text {
+	font-size: 16px !important;
 	width: 100%;
 	text-align: justify;
 }

@@ -73,7 +73,7 @@ function showNews(a) {
 	var anews = localStorage.getItem('allNews_' + link);
 	if (anews) {
 		anews = JSON.parse(anews);
-		drawNews(anews);
+		drawNews(title,anews);
 	} else {
 		$.ajax({
 			type : "POST",
@@ -86,7 +86,7 @@ function showNews(a) {
 			success : function(data) {
 				var anews = JSON.stringify(data);
 				localStorage.setItem('allNews_' + link, anews);
-				drawNews(data);
+				drawNews(title,data);
 			},
 			error : function(data) {
 			}
@@ -95,13 +95,14 @@ function showNews(a) {
 }
 
 //--------------------------------------------------------
-function drawNews(data) {
+function drawNews(title,data) {
 	var data = $("<div>" + data + "</div>");
 	var img = $(data).find("#CenterTable table#NewsTable img").attr("src");
 	var lead = $(data).find("#CenterTable table#NewsTable h2").text();
 	var text = $(data).find("#CenterTable table:nth-child(2) tr:nth-child(2) td").html();
 	$("#anews div[data-role='content']").html("<div id='news_row'></div>")
-	$("#anews div[data-role='content'] #news_row").html("<div id='news_img'><img src='" + img + "' /></div>");
+	$("#anews div[data-role='content'] #news_row").html("<h1>"+title+"</h1>");
+	$("#anews div[data-role='content'] #news_row").append("<div id='news_img'><img src='" + img + "' /></div>");
 	$("#anews div[data-role='content'] #news_row").append("<div id='news_lead'>" + lead + "</div>");
 	$("#anews div[data-role='content']").append("<div id='news_text'>" + text + "</div>");
     $.mobile.changePage($("#anews"), {transition: "slide"});
