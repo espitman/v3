@@ -59,11 +59,11 @@ function showNews(a) {
 	$("#anews h1").html(title);
 	
 	$.mobile.showPageLoadingMsg();
-	var anews = localStorage.getItem('allNews_' + link);
-	if (anews) {
-		anews = JSON.parse(anews);
-		drawNews(anews);
-	} else {
+	//var anews = localStorage.getItem('allNews_' + link);
+	//if (anews) {
+	//	anews = JSON.parse(anews);
+	//	drawNews(anews);
+	//} else {
 		$.ajax({
 			type : "POST",
 			url : "http://boum.ir/test/proxy.php",
@@ -73,14 +73,14 @@ function showNews(a) {
 			},
 			async : true,
 			success : function(data) {
-				var anews = JSON.stringify(data);
-				localStorage.setItem('allNews_' + link, anews);
+				//var anews = JSON.stringify(data);
+				//localStorage.setItem('allNews_' + link, anews);
 				drawNews(data);
 			},
 			error : function(data) {
 			}
 		});
-	}
+	//}
 }
 
 //--------------------------------------------------------
@@ -100,11 +100,11 @@ function drawNews(data) {
 //--------------------------------------------------------
 function showLeague(a) {
 	var link = a.attr("data-link");
-	var anews = localStorage.getItem('league_' + link);
-	if (anews) {
-		anews = JSON.parse(anews);
-		drawLeague(anews, a);
-	} else {
+	//var anews = localStorage.getItem('league_' + link);
+	//if (anews) {
+	//	anews = JSON.parse(anews);
+	//	drawLeague(anews, a);
+	//} else {
 		$.ajax({
 			type : "POST",
 			url : "http://boum.ir/test/proxy.php",
@@ -115,13 +115,13 @@ function showLeague(a) {
 			async : true,
 			success : function(data) {
 				var anews = JSON.stringify(data);
-				localStorage.setItem('league_' + link, anews);
+				//localStorage.setItem('league_' + link, anews);
 				drawLeague(data, a);
 			},
 			error : function(data) {
 			}
 		});
-	}
+	//}
 }
 
 //--------------------------------------------------------
@@ -146,11 +146,11 @@ function showLeagueTable(a) {
 
 	var link = a.attr("data-table");
 
-	var anews = localStorage.getItem('lTable_' + link);
-	if (anews) {
-		anews = JSON.parse(anews);
-		drawLeagueTable(anews, a);
-	} else {
+	//var anews = localStorage.getItem('lTable_' + link);
+	//if (anews) {
+	//	anews = JSON.parse(anews);
+	//	drawLeagueTable(anews, a);
+	//} else {
 		$.ajax({
 			type : "POST",
 			url : "http://boum.ir/test/proxy.php",
@@ -161,13 +161,13 @@ function showLeagueTable(a) {
 			async : true,
 			success : function(data) {
 				var anews = JSON.stringify(data);
-				localStorage.setItem('lTable_' + link, anews);
+				//localStorage.setItem('lTable_' + link, anews);
 				drawLeagueTable(data,a);
 			},
 			error : function(data) {
 			}
 		});
-	}
+	//}
 }
 
 //--------------------------------------------------------
