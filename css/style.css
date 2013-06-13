@@ -77,9 +77,10 @@
 .ui-footer {
 	padding: 10px 0;
 }
-.ui-footer a {
+.ui-footer button {
 	float: left;
 	margin: 0 5px !important;
+	left: -80% !important;
 }
 #league h1,
 #league h2 {

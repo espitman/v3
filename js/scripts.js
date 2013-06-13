@@ -35,3 +35,7 @@ $(document).on('click', '.aLeague', function() {
 	showLeagueTable($(this));
 }); 
 
+$(document).on('click', '#reset_data', function() {
+	localStorage.clear();
+}); 
+
