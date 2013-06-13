@@ -35,7 +35,7 @@
 	font-size: 11px;
 }
 #ul-news li:hover,#ul-news li:active {
-	background: red;
+	background: #CCC;
 }
 
 #anews {

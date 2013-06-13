@@ -7,6 +7,9 @@ function footballNewsList(URL, elm) {
 			url : URL
 		},
 		async : true,
+		beforeSend : function() {
+			$.mobile.showPageLoadingMsg();
+		},
 		success : function(data) {
 			$("#" + elm + " #ul-news").empty();
 			var data = $("<div>" + data + "</div>");
@@ -14,8 +17,11 @@ function footballNewsList(URL, elm) {
 				var title = $(this).text();
 				var link = $(this).attr("href");
 				$("#" + elm + " #ul-news").append("<li data-title='" + title + "' data-link='" + link + "' style='direction:rtl;text-align:right;' href='#anews'>" + title + "</li>");
-				$("#" + elm + " #ul-news").listview("refresh");
+				
 			});
+			$.mobile.changePage("#" + elm, {transition: "slide"});
+			$("#" + elm + " #ul-news").listview("refresh");	
+			$.mobile.hidePageLoadingMsg();
 		},
 		error : function(data) {
 		}
@@ -34,6 +40,9 @@ function sportNewsList() {
 			url : URL
 		},
 		async : true,
+		beforeSend : function() {
+			$.mobile.showPageLoadingMsg();
+		},
 		success : function(data) {
 			var data = $("<div>" + data + "</div>");
 			var data = $(data).find("#identifierwidget-302 .widget-content").html();
@@ -42,8 +51,10 @@ function sportNewsList() {
 				var title = $(this).text();
 				var link = $(this).attr("href");
 				$("#" + elm + " #ul-news").append("<li data-title='" + title + "' data-link='" + link + "' style='direction:rtl;text-align:right;'>" + title + "</li>");
-				$("#" + elm + " #ul-news").listview("refresh");
 			});
+			$.mobile.changePage(a, {transition: "slide"});
+			$("#" + elm + " #ul-news").listview("refresh");	
+			$.mobile.hidePageLoadingMsg();
 		},
 		error : function(data) {
 		}
@@ -135,6 +146,8 @@ function drawLeague(data, a) {
 	$("#league div[data-role='content']").append("<h1>" + wTitle + "</h1>");
 	//$("#league div[data-role='content']").append("<h2>"+wDate+"</h2>");
 	$("#league div[data-role='content']").append(data.find(".league-table"));
+	$.mobile.changePage($("#league"), {transition: "slide"});
+	$.mobile.hidePageLoadingMsg();
 }
 
 //--------------------------------------------------------
@@ -143,6 +156,7 @@ function showLeagueTable(a) {
 	$("#league div[data-role='content']").empty();
 	var title = a.attr("data-title");
 	$("#league h1").html(title);
+	$.mobile.showPageLoadingMsg();
 
 	var link = a.attr("data-table");
 
@@ -193,3 +207,4 @@ function iconsPos() {
 		"right" : (dif / 2) + "px"
 	});
 }
+//--------------------------------------------------------
