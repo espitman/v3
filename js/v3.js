@@ -19,7 +19,7 @@ function footballNewsList(URL, elm) {
 				$("#" + elm + " #ul-news").append("<li data-title='" + title + "' data-link='" + link + "' style='direction:rtl;text-align:right;' href='#anews'>" + title + "</li>");
 				
 			});
-			$.mobile.changePage("#" + elm, {transition: "slide"});
+			changePage("#" + elm);
 			$("#" + elm + " #ul-news").listview("refresh");	
 			$.mobile.hidePageLoadingMsg();
 		},
@@ -52,7 +52,7 @@ function sportNewsList() {
 				var link = $(this).attr("href");
 				$("#" + elm + " #ul-news").append("<li data-title='" + title + "' data-link='" + link + "' style='direction:rtl;text-align:right;'>" + title + "</li>");
 			});
-			$.mobile.changePage(a, {transition: "slide"});
+			changePage(a);
 			$("#" + elm + " #ul-news").listview("refresh");	
 			$.mobile.hidePageLoadingMsg();
 		},
@@ -105,7 +105,7 @@ function drawNews(title,data) {
 	$("#anews div[data-role='content'] #news_row").append("<div id='news_img'><img src='" + img + "' /></div>");
 	$("#anews div[data-role='content'] #news_row").append("<div id='news_lead'>" + lead + "</div>");
 	$("#anews div[data-role='content']").append("<div id='news_text'>" + text + "</div>");
-    $.mobile.changePage($("#anews"), {transition: "slide"});
+    changePage("#anews");
 	$.mobile.hidePageLoadingMsg();
 }
 
@@ -147,7 +147,7 @@ function drawLeague(data, a) {
 	$("#league div[data-role='content']").append("<h1>" + wTitle + "</h1>");
 	//$("#league div[data-role='content']").append("<h2>"+wDate+"</h2>");
 	$("#league div[data-role='content']").append(data.find(".league-table"));
-	$.mobile.changePage($("#league"), {transition: "slide"});
+	changePage("#league");
 	$.mobile.hidePageLoadingMsg();
 }
 
@@ -209,3 +209,10 @@ function iconsPos() {
 	});
 }
 //--------------------------------------------------------
+function changePage(a) {
+	$.mobile.changePage(a, {transition: "slide"});
+	//console.log(a);		
+	//localStorage.setItem('allNews_' + link, anews);
+	
+}
+
