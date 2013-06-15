@@ -6,6 +6,10 @@ $(document).on('pageshow', 'div[data-role="page"]', function() {
 	iNav.push(currentPage);
 });
 
+$(document).on('pageinit', '#home', function() {
+	localStorage.clear();
+});
+
 $(document).on('pageshow', '#home', function() {
 	iconsPos();
 });
@@ -38,6 +42,7 @@ $(document).on('click', '.aLeague', function() {
 
 $(document).on('click', '#reset_data', function() {
 	localStorage.clear();
+	alert('Data was cleared successfully!');
 });
 $(document).on('click', '#button_back', function() {
 	changePage("#"+iNav.pop());
