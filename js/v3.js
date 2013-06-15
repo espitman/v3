@@ -1,4 +1,9 @@
 function footballNewsList(URL, elm) {
+	
+	$("#" + elm + " #ul-news").append("<li>saeed</li>");
+	changePage("#" + elm);
+	
+	/*
 	$.ajax({
 		type : "POST",
 		url : "http://boum.ir/test/proxy.php",
@@ -26,6 +31,7 @@ function footballNewsList(URL, elm) {
 		error : function(data) {
 		}
 	});
+	*/
 }
 
 //--------------------------------------------------------
