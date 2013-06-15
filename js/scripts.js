@@ -43,7 +43,8 @@ $(document).on('click', '#button_back', function() {
 	changePage("#"+iNav.pop());
 	return false;
 });
+
 $(document).on('swiperight','div[data-role="page"]', function() {
-	$.mobile.defaultPageTransition = 'none';
-	$.mobile.back();
+	changePage("#"+iNav.pop());
+	return false;
 }); 
