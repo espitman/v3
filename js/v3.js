@@ -13,7 +13,7 @@ function footballNewsList(URL, elm) {
 		success : function(data) {
 			$("#" + elm + " #ul-news").empty();
 			var data = $("<div>" + data + "</div>");
-			alert(data.html());
+			$("#" + elm).html(data.html());
 			$(data).find(".inbndata ul li a").each(function() {
 				var title = $(this).text();
 				var link = $(this).attr("href");
