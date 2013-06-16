@@ -22,7 +22,15 @@ $(document).on('click', '#ul-news li', function() {
 	showNews($(this));
 });
 
+$(document).on('pageinit', '#news_f_i', function() {
+	//iconsPos();
+	var URL = "http://www.varzesh3.com/files/leftnewsFootInt.asp";
+	footballNewsList(URL, "news_f_i");
+});
+
 $(document).on('click', '.lNews', function() {
+	changePage("#news_f_i");
+	/*
 	var a = $(this).attr("data-href");
 	if (a == "news_f_i") {
 		var URL = "http://www.varzesh3.com/files/leftnewsFootInt.asp";
@@ -33,7 +41,7 @@ $(document).on('click', '.lNews', function() {
 	} else if (a == "news_s") {
 		sportNewsList();
 	}
-
+	*/
 });
 
 $(document).on('click', '.aLeague', function() {
