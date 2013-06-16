@@ -1,30 +1,14 @@
 function footballNewsList(URL, elm) {
 	$.ajax({
-		type : "POST",
-		url : URL,
+		url : "http://boum.ir/test/proxy.php",
 		dataType : "html",
 		data : {
 			url : URL
 		},
-		async : true,
-		beforeSend : function() {
-			$.mobile.showPageLoadingMsg();
-		},
+		type : 'post',
 		success : function(data) {
-			$("#" + elm + " #ul-news").empty();
-			var data = $("<div>" + data + "</div>");
-			$(data).find(".inbndata ul li a").each(function() {
-				var title = $(this).text();
-				var link = $(this).attr("href");
-				$("#" + elm + " #ul-news").append("<li data-title='" + title + "' data-link='" + link + "' style='direction:rtl;text-align:right;' href='#anews'>" + title + "</li>");
-				
-			});
-			changePage("#" + elm);
-			$("#" + elm + " #ul-news").listview("refresh");	
-			$.mobile.hidePageLoadingMsg();
+			alert(data);
 		},
-		error : function(data) {
-		}
 	});
 }
 
