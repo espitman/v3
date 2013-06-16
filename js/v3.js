@@ -1,12 +1,4 @@
 function footballNewsList(URL, elm) {
-	
-	$.mobile.showPageLoadingMsg();
-	$("#" + elm + " #ul-news").empty();
-	$("#" + elm + " #ul-news").append("<li>saeed</li>");
-	changePage("#" + elm);
-	$("#" + elm + " #ul-news").listview("refresh");	
-	$.mobile.hidePageLoadingMsg();
-	/*
 	$.ajax({
 		type : "POST",
 		url : "http://boum.ir/test/proxy.php",
@@ -34,7 +26,6 @@ function footballNewsList(URL, elm) {
 		error : function(data) {
 		}
 	});
-	*/
 }
 
 //--------------------------------------------------------
