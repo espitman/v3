@@ -6,7 +6,7 @@ function footballNewsList(URL, elm) {
 		data : {
 			url : URL
 		},
-		async : true,
+		async : false,
 		beforeSend : function() {
 			$.mobile.showPageLoadingMsg();
 		},

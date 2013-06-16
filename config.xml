@@ -4,7 +4,7 @@
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "com.phonegap.varzesh3"
-        version   = "0.0.935">
+        version   = "0.0.936">
 
     <name>ورزش 3</name>
 
