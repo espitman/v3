@@ -1,8 +1,27 @@
 function footballNewsList(URL, elm) {
+	$.mobile.showPageLoadingMsg();
+	$.ajax({
+		url : "http://boum.ir/test/p2.php",
+		dataType : "jsonp",
+		type : 'post',
+		processData : false,
+		crossDomain : true,
+		contentType : "application/json",
+		success : function(data) {
+			console.log(data);
+			for(var x in data["test"]) {
+				$("#" + elm + " #ul-news").append("<li>" + data["test"][x] + "</li>");
+			}	
+			changePage("#" + elm);
+		}
+	});
+	
+	
+	/*
 	$.ajax({
 		type : "POST",
-		url : "http://boum.ir/test/p2.php",
-		dataType : "json",
+		url : "http://boum.ir/test/proxy.php",
+		dataType : "html",
 		data : {
 			url : URL
 		},
@@ -11,15 +30,6 @@ function footballNewsList(URL, elm) {
 			$.mobile.showPageLoadingMsg();
 		},
 		success : function(data) {
-			console.log(data);
-			for(var x in data[1]) {
-				$("#" + elm + " #ul-news").append("<li>" + data[1][x] + "</li>");	
-				changePage("#" + elm);
-				$("#" + elm + " #ul-news").listview("refresh");	
-				$.mobile.hidePageLoadingMsg();			
-			}
-			
-			/*
 			$("#" + elm + " #ul-news").empty();
 			var data = $("<div>" + data + "</div>");
 			$(data).find(".inbndata ul li a").each(function() {
@@ -31,12 +41,13 @@ function footballNewsList(URL, elm) {
 			changePage("#" + elm);
 			$("#" + elm + " #ul-news").listview("refresh");	
 			$.mobile.hidePageLoadingMsg();
-			*/
 		},
 		error : function(data) {
 		}
 	});
+	*/
 }
+
 
 //--------------------------------------------------------
 function sportNewsList() {
