@@ -1,4 +1,5 @@
 function footballNewsList(URL, elm) {
+	alert(URL+","+elm);
 	$.ajax({
 		type : "POST",
 		url : "http://boum.ir/test/proxy.php",
