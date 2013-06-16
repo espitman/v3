@@ -8,31 +8,23 @@ function footballNewsList(URL, elm) {
 		},
 		async : true,
 		beforeSend : function() {
-			alert('showPageLoadingMsg1');
 			$.mobile.showPageLoadingMsg();
-			alert('showPageLoadingMsg2');
 		},
 		success : function(data) {
-			alert('success1');
 			$("#" + elm + " #ul-news").empty();
-			alert('success2');
 			var data = $("<div>" + data + "</div>");
-			alert('success3');
+			alert(data.html());
 			$(data).find(".inbndata ul li a").each(function() {
 				var title = $(this).text();
 				var link = $(this).attr("href");
 				$("#" + elm + " #ul-news").append("<li data-title='" + title + "' data-link='" + link + "' style='direction:rtl;text-align:right;' href='#anews'>" + title + "</li>");
+				
 			});
-			alert('success4');
 			changePage("#" + elm);
-			alert('success5');
-			$("#" + elm + " #ul-news").listview("refresh");
-			alert('success6');	
+			$("#" + elm + " #ul-news").listview("refresh");	
 			$.mobile.hidePageLoadingMsg();
-			alert('success7');
 		},
 		error : function(data) {
-			alert('error:::'+data);
 		}
 	});
 }
