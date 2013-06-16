@@ -1,12 +1,12 @@
 function footballNewsList(URL, elm) {
 	$.ajax({
 		type : "POST",
-		url : "http://boum.ir/test/proxy.php",
+		url : URL,
 		dataType : "html",
 		data : {
 			url : URL
 		},
-		async : false,
+		async : true,
 		beforeSend : function() {
 			$.mobile.showPageLoadingMsg();
 		},
